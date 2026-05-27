@@ -1,0 +1,387 @@
+body{
+    background: linear-gradient(135deg,#fdfbfb,#ebedee);
+    font-family: "Segoe UI", sans-serif;
+}
+
+#loginDiv{
+    width: 420px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.08);
+    align-items: center;
+}
+.btn-close {
+    filter: invert(1);
+}
+#loginDiv:hover{
+	 box-shadow: 5px 5px 15px 5px rgba(170, 170, 170, 0.4);
+}
+
+.loginput, .adminpassword {
+    margin-bottom: 15px; 
+    display: inline-block; 
+}
+
+#headingLogin{
+    font-size: 28px;
+    font-weight: 600;
+    color: #5d64f3;
+}
+
+.loginput{
+    border-radius: 6px;
+    border: 1px solid #d6d6f5;
+    padding: 6px;
+    
+}
+
+
+
+.loginput:focus,
+.form-control:focus,
+.form-select:focus{
+    border-color: #a8c0ff;
+    box-shadow: 0 0 5px rgba(168,192,255,0.5);
+}
+
+#loginBtn{
+    background: #0d6efd !important;
+    border: none;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+#loginBtn:hover{
+    background: #234fef !important;
+}
+
+#submit{
+    background: #0d6efd;
+    border: none;
+}
+
+#submit:hover{
+    background: #1e4bef;
+}
+.password-with-icon {
+    padding-right: 2.5rem; /* make space for the icon */
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.modal-content{
+    border-radius: 12px;
+    background: #fff9fb;
+    background-color: #fff !important;   /* white background */
+    border: 2px solid #fff; 
+    
+}
+
+.modal-header{
+    background: #000042 !important;
+    color: #fafafa !important;
+    font-size: medium;
+    display:flex !important ;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 14px;          /* reduced text size */
+    padding: 8px 16px;
+}
+
+label{
+    font-weight: 500;
+    color: #01010a;
+}
+
+.required{
+    color: #f60008;
+}
+
+.error{
+    display: none;
+    font-size: 13px;
+    color: #ff6b81;
+}
+
+footer{
+    background: #1f1f3a !important;
+    color: #bfc6ff !important;
+}
+
+#reg a{
+    color: #0d6efd;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+#reg a:hover{
+    text-decoration: underline;
+}
+.custom-overlay {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.4);
+
+    z-index: 9999;
+}
+
+.custom-alert-box {
+    width: 320px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.custom-alert-box {
+    width: 320px;
+
+    background: #28a745;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    font-size: 16px;
+}
+.loginFields{
+    margin-top: 15px;
+}
+.text-end{
+	display:flex;
+	align-items: center;
+}
+
+.iti {
+    width: 100%;
+}
+
+
+.modal-header{
+    background: #000042 !important;
+    color: #fafafa !important;
+    font-size: medium;
+}
+.edit-btn-style{
+    background: transparent;
+    border-radius:6px;
+    padding:6px;
+}
+
+.edit-btn-style i{
+    font-size:20px;
+    color:#9aa0a6;
+    transition:0.3s;
+}
+
+.edit-btn-style:hover{
+    background:#e8f0fe;
+}
+
+.edit-btn-style.activeEdit{
+    background:#0d6efd;
+    border:2px solid #0a58ca;
+    border-radius:6px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+
+.edit-btn-style.activeEdit i{
+    color:white;
+}
+#forgot-modal .modal-content {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#forgot-modal .modal-header {
+    padding: 10px 12px;
+}
+
+#forgot-modal .modal-body {
+    padding: 12px;
+}
+
+#forgot-modal label {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #333;
+}
+
+#forgot-modal .form-control,
+#forgot-modal .form-select {
+    font-size: 15px;
+    height: 38px;
+}
+
+#forgot-modal .modal-title {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+#forgot-modal .mb-2 {
+    margin-bottom: 8px !important;
+}
+
+#forgot-modal .btn {
+    padding: 5px 12px;
+    font-size: 14px;
+}
+#forgot-modal .modal-body { max-width: 90%; margin: auto; }
+#reset-modal .modal-content {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#reset-modal .modal-header {
+    padding: 10px 12px;
+}
+
+#reset-modal .modal-body {
+    padding: 12px;
+}
+
+#reset-modal .modal-footer {
+    padding: 10px 12px;
+}
+
+#reset-modal label {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #333;
+}
+
+#reset-modal .form-control {
+    font-size: 15px;
+    height: 38px;
+}
+
+#reset-modal .modal-title {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+#reset-modal .mb-2 {
+    margin-bottom: 8px !important;
+}
+
+#reset-modal .btn {
+    font-size: 14px;
+    padding: 5px 14px;
+}
+#reset-modal .password-field {
+    height: 36px;  
+    font-size: 14.5px;
+}
+#reset-modal .toggle-password {
+    right: 10px;
+    z-index: 2;
+}
+#reset-modal .modal-dialog {
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+}
+.password-wrapper {
+    position: relative;
+}
+
+.password-field {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;  
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    z-index: 2;
+     background: transparent !important;
+    border: none !important;
+    padding: 0 10px;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
+
+#userTableWrapper {
+    position: relative;
+}
+.loader-overlay {
+    position: absolute;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255,255,255,254); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;  
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}

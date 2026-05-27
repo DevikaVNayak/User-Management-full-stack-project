@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home page</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/Login.css">
+<script src="JS/jquery-3.6.0.min.js"></script>
+<script src="javascript/bootstrap.bundle.min.js"></script>
+<script src="javascript/Login.js"></script>
+
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+  <header>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background:linear-gradient(90deg,#1f1f3a,#2e2e5e);">
+    <div class="container-fluid" style="background: linear-gradient(90deg,#1f1f3a,#2e2e5e);">
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav" style="display:flex;justify-content: center;">
+        <ul class="navbar-nav" >
+            <center><h1 style= "color:#7c83fd !important;  
+    font-weight:600;
+    letter-spacing:1px;">User Management System </h1></center>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+  </header>
+
+  <main class="flex-grow-1" >
+    
+    <div id="loginDiv" style="display:flex;">
+<form id="form1" style="width:100%;">
+
+<center><p id="headingLogin">Login page</p></center>
+
+<div class="mb-3 row align-items-center loginFields">
+
+    <label class="col-sm-5 aid" for="adminid">Admin ID:</label>
+
+    <div class="col-sm-7">
+        <input class="form-control loginput"
+               type="text"
+               id="adminid"
+               name="adminid">
+
+        <span id="adminid-login-error"
+              class="error text-danger"
+              style="display:none;">
+            Admin ID required
+        </span>
+    </div>
+</div>
+
+<div class="mb-3 row align-items-center loginFields">
+
+    <label class="col-sm-5 adminpassword" for="adminpassword">
+        Password:
+    </label>
+
+    <div class="col-sm-7 position-relative">
+
+        <input type="password"
+               id="adminpassword"
+               name="adminpassword"
+               class="form-control loginput password-with-icon">
+
+        <i class="bi bi-eye toggle-icon" style="right:25px;" onclick="toggleLoginPassword()"></i>
+
+        <span id="adminpassword-login-error"
+              class="error text-danger"
+              style="display:none;">
+           
+        </span>
+    </div>
+</div>
+<p style="text-align:right; margin-top:5px;">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#forgot-modal">
+        Forgot Password?
+    </a>
+</p>
+
+<button type="button"
+        id="loginBtn"
+        style="padding:5px;width:100%;border-radius:5px;background:#0088FF;color:white;"
+        onclick="loginAdmin()">
+    Login
+</button>
+
+<p id="reg" style="display:flex;justify-content:center;">
+    Don't have an account?
+    <a href="#"
+       id="createAccountLink"
+       data-bs-toggle="modal"
+       data-bs-target="#register-modal">
+        Create one
+    </a>
+</p>
+
+</form>
+</div>
+    <div class="modal fade" id="register-modal" tabindex="-1" data-bs-backdrop="static"  data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg" >
+    <div class="modal-content" style="max-height: 600px; overflow-y: auto;">
+      
+      <div class="modal-header" style="background: #000042;color:#FDDA0D;display:flex;justify-content: center;align-items: center;">
+        <h5 class="modal-title w-100 text-center m-0">Registration</h5>
+        <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" onclick="clearRegisterForm();"></button>
+      </div>
+
+<div class="modal-body">
+
+<form class="form2" autocomplete="off"><!-- turnin off autocomplete to get new register form each time without previously filled form  -->
+
+<div class="row mb-3">
+
+<div class="col-sm-4">
+<label for="reg_adminid">Admin ID<span class="required">*</span></label>
+<input type="text" id="reg_adminid" name="reg_adminid" class="form-control">
+<span id="adminid-error" class="error"></span>
+</div>
+
+<div class="col-sm-4">
+<label for="firstname">First Name<span class="required">*</span></label>
+<input type="text" id="firstname" name="firstname" class="form-control">
+<span id="firstname-error" class="error"></span>
+</div>
+
+<div class="col-sm-4">
+<label for="middlename">Middle Name</label>
+<input type="text" id="middlename" name="middlename" class="form-control">
+<span id="middlename-error" class="error"></span>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col-sm-4">
+<label for="lastname">Last Name<span class="required">*</span></label>
+<input type="text" id="lastname" name="lastname" class="form-control">
+<span id="lastname-error" class="error">Last name cannot be blank</span>
+</div>
+
+<div class="col-sm-4">
+<label for="email">Email<span class="required">*</span></label>
+<input type="text" id="email" name="email" class="form-control">
+<span id="email-error" class="error">Email cannot not be blank</span>
+</div>
+
+<div class="col-sm-4">
+<label for="address">Address<span class="required">*</span></label>
+<textarea id="address" name="address" rows="2" class="form-control"></textarea>
+<span id="address-error" class="error">Enter address</span>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col-sm-4">
+<label for="contact">Contact<span class="required">*</span></label>
+<input type="tel" id="contact" name="contact" class="form-control">
+<span id="contact-error" class="error">Contact cannot be be blank</span>
+</div>
+
+<div class="col-sm-4">
+<label for="gender">Gender<span class="required">*</span></label>
+<select id="gender" name="gender" class="form-select">
+<option value="">Select</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="others">Others</option>
+</select>
+<span id="gender-error" class="error"></span>
+</div>
+
+<div class="col-sm-4">
+<label for="dob">DOB<span class="required">*</span></label>
+<input type="date" id="dob" name="dob" class="form-control">
+<span id="dob-error" class="error">Dob cannot be blank</span>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col-sm-6">
+  <label for="newpassword">Create Password<span class="required">*</span></label>
+  <div class="position-relative">
+    <input type="password" id="newpassword" class="form-control pe-5" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+    <i class="bi bi-eye-fill toggle-icon"onclick="togglePassword('newpassword', this)"
+       style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+    </i>
+  </div>
+    <span id="newpassword-error" class="error">Password cannot be blank</span>
+  
+</div>
+
+<div class="col-sm-6">
+  <label for="confirmpassword">Confirm Password<span class="required">*</span></label>
+  <div class="position-relative">
+    <input type="password" id="confirmpassword" class="form-control pe-5">
+    <i class="bi bi-eye-fill toggle-icon" onclick="togglePassword('confirmpassword', this)"
+       style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">
+    </i>
+  </div>
+   <span id="confirmpassword-error" class="error">
+    Passwords do not match
+  </span>
+</div>
+
+</div>
+
+
+<div class="row mb-3">
+
+<div class="col-sm-6">
+<label for="QuestionClass">Security Question<span class="required">*</span></label>
+<select id="QuestionClass" name="QuestionClass" class="form-select">
+<option>What was your favorite childhood food?</option>
+<option>What was the name of your best friend in school?</option>
+<option>What is your favorite teacher's name?</option>
+<option>What was the name of your first pet?</option>
+</select>
+<span id="question-error" class="error">It cannot be blank</span>
+</div>
+
+<div class="col-sm-6">
+<label for="answer">Answer<span class="required">*</span></label>
+<input type="text" id="answer" name="answer" class="form-control">
+<span id="answer-error" class="error">It cannot be blank</span>
+
+</div>
+
+</div>
+
+
+<div class="d-flex justify-content-end mt-3">
+<button type="button" id="submit" class="btn btn-primary me-2" onclick="registerAdmin();">Register</button>
+<button type="button" id="clearBtn" class="btn btn-secondary" onclick="clearRegisterForm();"style="background: red;color:white">Clear</button>
+</div>
+
+</form>
+
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="forgot-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Forgot Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="mb-2">
+          <label>Admin ID</label>
+          <input type="text" id="forgotPasswordAdminId" class="form-control">
+          <span id="forgot-adminid-error" class="error"></span>
+        </div>
+
+        <div class="mb-2">
+          <label>Security Question</label>
+          <select id="forgotPasswordQuestion" class="form-select">
+            <option value="">Select Question</option>
+            <option>What was your favorite childhood food?</option>
+            <option>What was the name of your best friend in school?</option>
+            <option>What is your favorite teacher's name?</option>
+            <option>What was the name of your first pet?</option>
+          </select>
+          <span id="forgot-question-error" class="error"></span>
+        </div>
+
+        <div class="mb-2">
+          <label>Answer</label>
+          <input type="text" id="forgotPasswordAnswer" class="form-control">
+          <span id="forgot-answer-error" class="error"></span>
+        </div>
+
+        <div class="text-center mt-3">
+          <button class="btn btn-success" onclick="verifySecurity()">
+            Verify
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+    
+<div class="modal fade" id="reset-modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Reset Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+     <div class="mb-2">
+  <label>New Password</label>
+
+  <div class="password-wrapper">
+    <input type="password" id="forgotPasswordNewPassword" class="form-control password-field">
+
+ <i class="bi bi-eye-fill toggle-password"
+           onclick="togglePassword('forgotPasswordNewPassword', this)">
+        </i>
+  </div>
+   <span id="forgot-newpassword-error" class="error"></span>
+</div>
+
+    <div class="mb-2">
+  <label>Confirm Password</label>
+
+  <div class="password-wrapper">
+    <input type="password" id="forgotPasswordConfirmPassword" class="form-control password-field">
+    <i class="bi bi-eye-fill toggle-password"
+           onclick="togglePassword('forgotPasswordConfirmPassword', this)">
+        </i>
+  </div>
+      <span id="forgot-confirmpassword-error" class="error"></span>
+  
+</div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="resetForgotPassword()">
+          Reset Password
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </main>
+  
+ <footer style="margin-top: auto; padding: 10px;background: #191954; text-align: center; border-top: 1px solid #ccc; color:grey;">
+        <!-- your footer code here -->
+        <p>&copy; 2026 expEDIum</p>
+    </footer>
+    
+    
+
+</body>
+
+<div id="customAlertOverlay" class="custom-overlay">
+    <div class="custom-alert-box">
+        <p id="customAlertMessage"></p>
+
+        
+    </div>
+</div>
+</html>
